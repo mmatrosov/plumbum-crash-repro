@@ -1,6 +1,6 @@
 # A repro case for a strange crash...
 
-...involving plumbum, boost.python and gold.
+...involving plumbum, boost.python, gold and clang's `--rtlib=compiler-rt` option.
 
 ## Pre-requisites
 
@@ -98,7 +98,10 @@ __strlen_avx2 () at ../sysdeps/x86_64/multiarch/strlen-avx2.S:65
 
 The crash happens at this line: https://github.com/tomerfiliba/plumbum/blob/master/plumbum/commands/processes.py#L286
 
-The crash does NOT happen if you remove `-fuse-ld=gold` compiler option or if you remove `import build.libextension` from `main.py`.
+The crash does NOT happen if you do any of the following:
+* remove `-fuse-ld=gold` compiler option
+* remove `import build.libextension` from `main.py`
+* remove `--rtlib=compiler-rt` from `CMakeLists.txt` (you would alse need to remove `mul()` function from `extension.cpp` in this case)
 
 If you remove sanitizers, the program crashes with Segmentation fault with a different callstack:
 ```
