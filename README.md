@@ -123,3 +123,12 @@ __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:50
     at ../csu/libc-start.c:342
 #9  0x00000000005f9ece in _start ()
 ```
+
+## Reported bugs
+
+I am not sure which side is responsible for the problem, so I created several bugs:
+
+* https://github.com/tomerfiliba/plumbum/issues/556
+* https://github.com/boostorg/python/issues/370
+* https://bugs.llvm.org/show_bug.cgi?id=51227
+* https://lists.gnu.org/archive/html/bug-binutils/2021-07/index.html TBD: add link to the discussion
