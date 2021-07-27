@@ -1,0 +1,11 @@
+[requires]
+boost/1.76.0#f5a359a497e5a676a5f059292a26ca2a
+libbacktrace/cci.20210118#d2edeeefa17bc2065a06bbac3bccdabb
+
+[generators]
+cmake_find_package
+cmake_paths
+
+[options]
+boost:without_python=False
+boost:python_version=3.8
