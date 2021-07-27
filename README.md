@@ -102,6 +102,8 @@ The crash does NOT happen if you remove `-fuse-ld=gold` compiler option or if yo
 
 If you remove sanitizers, the program crashes with Segmentation fault with a different callstack:
 ```
+$ gdb --args python3 main.py 
+...
 Thread 1 "python3" received signal SIGABRT, Aborted.
 __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:50
 50	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
