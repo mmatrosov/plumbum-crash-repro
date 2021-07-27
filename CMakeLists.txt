@@ -2,8 +2,11 @@ cmake_minimum_required(VERSION 3.19.0)
 
 project(plumbum-repro-case CXX)
 
-include("build/conan_paths.cmake")
+string(APPEND CMAKE_CXX_FLAGS
+       " -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer")
+string(APPEND CMAKE_SHARED_LINKER_FLAGS " --rtlib=compiler-rt")
 
+include("build/conan_paths.cmake")
 find_package(
   Python3
   COMPONENTS Development
