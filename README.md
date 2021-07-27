@@ -9,6 +9,7 @@ Tested with:
 * cmake version 3.20.3
 * Conan version 1.36.0
 * Python 3.8.5
+* plumbum 1.7.0
 * Ubuntu clang version 12.0.1-++20210630032618+fed41342a82f-1~exp1~20210630133332.127
 * Ubuntu 20.04.2 LTS
 
