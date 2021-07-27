@@ -4,7 +4,7 @@ project(plumbum-repro-case CXX)
 
 string(APPEND CMAKE_CXX_FLAGS
        " -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer")
-string(APPEND CMAKE_SHARED_LINKER_FLAGS " --rtlib=compiler-rt")
+string(APPEND CMAKE_SHARED_LINKER_FLAGS " --rtlib=compiler-rt -fuse-ld=gold")
 
 include("build/conan_paths.cmake")
 find_package(
